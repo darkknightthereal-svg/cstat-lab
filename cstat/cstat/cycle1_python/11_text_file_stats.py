@@ -1,0 +1,13 @@
+filename = input("Enter file name: ")
+with open(filename, "r") as f:
+    text = f.read()
+words = len(text.split())
+sentences = sum(text.count(c) for c in ".!?")
+upper = sum(1 for c in text if c.isupper())
+lower = sum(1 for c in text if c.islower())
+special = sum(1 for c in text if not c.isalnum() and not c.isspace())
+print("Words:", words)
+print("Sentences:", sentences)
+print("Uppercase letters:", upper)
+print("Lowercase letters:", lower)
+print("Special symbols:", special)
